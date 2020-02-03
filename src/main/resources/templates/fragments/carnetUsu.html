@@ -1,0 +1,26 @@
+<div class="dropdown d-flex">
+	<button class="btn-account d-none d-md-flex" type="button"
+		data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<span class="user-avatar user-avatar-md"> <img
+			src="assets/images/avatars/login.jpg" alt="">
+		</span> <span class="account-summary pr-lg-4 d-none d-lg-block">
+		   <span sec:authorize="!isAuthenticated()"  class="account-name">Sin Usuario</span>
+		   <span sec:authorize="isAuthenticated()"  class="account-name" th:text="*{user}"></span>
+<!-- 		   <span class="account-description">Marketing Manager</span></span>  -->
+	</button>
+	<!-- .dropdown-menu -->
+	<div class="dropdown-menu">
+		<div class="dropdown-arrow ml-3"></div>
+		<h6 sec:authorize="!isAuthenticated()" class="dropdown-header d-none d-md-block d-lg-none">Sin Usuario</h6>
+		<h6 sec:authorize="isAuthenticated()" class="dropdown-header d-none d-md-block d-lg-none" th:text="*{user}"></h6>
+		<li><a class="dropdown-item" href="user-profile.html"><span
+				class="dropdown-icon oi oi-person"></span> Profile</a></li>
+		<li sec:authorize="!isAuthenticated()" ><a class="dropdown-item" th:href="@{/logout}"><span class="dropdown-icon oi oi-account-login"></span>Login</a></li>
+		<li><a class="dropdown-item" th:href="@{/logout}" sec:authorize="isAuthenticated()"><span class="dropdown-icon oi oi-account-logout"></span>Logout</a></li>
+		<div class="dropdown-divider"></div>
+		<a class="dropdown-item" href="#">Help Center</a> <a
+			class="dropdown-item" href="#">Ask Forum</a> <a class="dropdown-item"
+			href="#">Keyboard Shortcuts</a>
+	</div>
+	<!-- /.dropdown-menu -->
+</div>

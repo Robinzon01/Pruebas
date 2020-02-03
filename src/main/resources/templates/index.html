@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	            xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+  <th:block th:include="fragments/head"></th:block>
+  
+  <body>
+    <!-- .app -->
+    <div class="app">
+      <!--[if lt IE 10]>
+      <div class="page-message" role="alert">You are using an <strong>outdated</strong> browser. Please <a class="alert-link" href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</div>
+      <![endif]-->
+      
+      <!-- .app-header -->
+      <th:block th:include="fragments/navbarH"></th:block>
+      <!-- .app-aside -->
+      <th:block th:include="fragments/navbarL"></th:block>
+      
+      <!-- .app-main -->
+      <main class="app-main">
+        <!-- .wrapper -->
+        <div class="wrapper">
+          <!-- .page -->
+          <div class="page">
+            <!-- .page-inner -->
+            <div class="page-inner">
+                
+                		
+            </div>
+          </div><!-- /.page -->
+        </div><!-- .app-footer -->
+        
+        <!-- /.wrapper -->
+      </main><!-- /.app-main -->
+    </div><!-- /.app -->
+    
+  </body>
+  <th:block th:include="fragments/scripts"></th:block>
+</html>
